@@ -70,3 +70,9 @@ python svg2gds.py in.svg out.gds --no_flip_y
 ```
 - Keeps the SVG’s original Y orientation (positive Y downward)
 
+
+> **Note on Text**: If your SVG contains `<text>` elements, **picosvg** cannot flatten them directly.  
+> 1) **Manually** convert text to outlines in a vector editor like Inkscape by selecting text → _Path_ → _Object to Path_ and **save as Plain SVG**.  
+> 2) Then run `svg2gds.py` on the resulting path-based file.  
+> Alternatively, if Inkscape is installed and on your PATH, you can use the `--convert_text` option to auto-convert text to outlines before flattening.
+
